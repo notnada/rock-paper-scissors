@@ -13,3 +13,7 @@ function getComputerChoice() {
 	}
 }
 
+// function that returns the human's choice in the game
+function getHumanChoice() {
+	return prompt("Enter your choice");
+}
