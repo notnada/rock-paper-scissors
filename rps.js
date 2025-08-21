@@ -5,11 +5,11 @@ function getComputerChoice() {
 	let computerChoice = Math.floor(Math.random()* 3 ); 
 	// Converts it into a choice : rock, paper or scissors
 	if (computerChoice == 0) {
-		return "Rock";
+		return "rock";
 	} else if (computerChoice == 1) {
-		return "Paper";
+		return "paper";
 	} else {
-		return "Scissors"
+		return "scissors"
 	}
 }
 
@@ -17,3 +17,8 @@ function getComputerChoice() {
 function getHumanChoice() {
 	return prompt("Enter your choice");
 }
+
+// variables to store player's and computer's scores
+let humanScore = 0;
+let computerScore = 0;
+
