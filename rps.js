@@ -18,26 +18,53 @@ function getHumanChoice() {
 	return prompt("Enter your choice");
 }
 
-// function for playing one round
-function playRound(humanChoice, computerChoice) {
-	let combo = `${humanChoice},${computerChoice}`;
-	if ( combo == "rock,scissors"|| combo == "scissors,paper" || combo == "paper,rock") {
-		humanScore++;
-		return `Human wins! ${humanChoice} beats ${computerChoice}`;
+// function to play a game that consists of 5 rounds
+function playGame () {
 	
-	} else if ( combo == "scissors,rock"|| combo == "paper,scissors" || combo == "rock,paper") {
-		computerScore++;
-		return `Computer wins! ${computerChoice} beats ${humanChoice}`;
+	// variables to store player's and computer's scores
+	let humanScore = 0;
+	let computerScore = 0;
 
-	} else {
-		return "it's a tie!"
+	// declaring the playround parameters
+	let humanChoice = "";
+	let computerChoice ="";
+
+	// function for playing one round
+	function playRound(humanChoice, computerChoice) {
+		// store player's and computer's choice
+		computerChoice= getComputerChoice();
+		humanChoice = getHumanChoice().toLowerCase();
+		const combo = `${humanChoice},${computerChoice}`;
+		if ( combo == "rock,scissors"|| combo == "scissors,paper" || combo == "paper,rock") {
+			humanScore++;
+			console.log(`Human wins! ${humanChoice} beats ${computerChoice}`);
+
+			} else if ( combo == "scissors,rock"|| combo == "paper,scissors" || combo == "rock,paper") {
+				computerScore++;
+				console.log(`Computer wins! ${computerChoice} beats ${humanChoice}`);
+		} else {
+			console.log("it's a tie!");
+				}
 	}
+
+	// Call playround 5 times
+	playRound ( humanChoice, computerChoice);
+	playRound ( humanChoice, computerChoice);
+	playRound ( humanChoice, computerChoice);
+	playRound ( humanChoice, computerChoice);
+	playRound ( humanChoice, computerChoice);
+
+	// Show Scores
+	console.log(`Human Score ${humanScore}`)
+	console.log(`Computer Score ${computerScore}`)
+
+	// Decide the winner
+	if ( humanScore > computerScore ) {
+		console.log("Human wins the game!");
+	} else {
+		console.log("Computer wins the game!");
+	}
+
 }
 
-// variables to store player's and computer's scores
-let humanScore = 0;
-let computerScore = 0;
-// constants to store player's and computer's choice
-const computerChoice = getComputerChoice();
-const humanChoice = getHumanChoice().toLowerCase();
-
+playGame();
