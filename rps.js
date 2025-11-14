@@ -14,7 +14,6 @@ function getComputerChoice() {
 		let humanScoreInt = parseInt(humanScore.textContent);
 		let computerScoreInt = parseInt(computerScore.textContent);
 		
-
 		// store player's and computer's choice
 		computerChoice= getComputerChoice();
 		
@@ -22,13 +21,13 @@ function getComputerChoice() {
 		if ( combo == "rock,scissors"|| combo == "scissors,paper" || combo == "paper,rock") {
 			humanScoreInt++;
 			humanScore.textContent = humanScoreInt
-			box.textContent = `Human wins! ${humanChoice} beats ${computerChoice}`;
+			box.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
 			
 
 			} else if ( combo == "scissors,rock"|| combo == "paper,scissors" || combo == "rock,paper") {
 				computerScoreInt++;
 				computerScore.textContent = computerScoreInt
-				box.textContent = `Computer wins! ${computerChoice} beats ${humanChoice}`;
+				box.textContent = `Sabina wins! ${computerChoice} beats ${humanChoice}`;
 		} else {
 			
 
@@ -40,14 +39,13 @@ function getComputerChoice() {
 
 
 function getHumanChoice(onChoice) {
-  let buttons = document.querySelectorAll("button");
+  let images = document.querySelectorAll(".choice");
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      onChoice(button.innerText);
+  images.forEach((img) => {
+    img.addEventListener("click", () => {
+      onChoice(img.dataset.choice); // rock / paper / scissors
     });
   });
-
 }
 // declaring the playround parameters
 	let humanChoice = "";
@@ -65,14 +63,14 @@ function getHumanChoice(onChoice) {
 				humanScore.innerText= 0;
  				computerScore.innerText = 0;
 		}
-		
+
    		humanChoice = choice;
    		playRound(humanChoice,computerChoice)
    		
    		if (humanScore.textContent== 5)
-   		  {box.textContent = "human wins!"}
+   		  {box.textContent = "You win the round!"}
  			else if (computerScore.textContent == 5)
- 				{box.textContent = "computer wins!"}
+ 				{box.textContent = "Sabina wins the round!"}
 
 			});
 

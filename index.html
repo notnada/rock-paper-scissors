@@ -4,16 +4,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Rock Paper Scissors</title>
+	<link rel="stylesheet" type="text/css" href="rps.css">
 </head>
 <body>
-	<button id="humanrock">rock</button>
-	<button id="humanpaper">paper</button>
-	<button id="humanscissors">scissors</button>
+	
 	<div class="results">
-		<h2>Human Score: <span id="humanscore">0</span></h2>
-		<h2>Computer Score: <span id="computerscore"> 0 </span></h2>
-		<h2 id="message"></h2>
+		<h2>Your Score: <span id="humanscore">0</span></h2>
+
+		<h2><br>Sabina's Score: <span id="computerscore"> 0 </span></h2>
 	</div>
+	<h2 id="message"></h2>
+	<div class="char">
+		<img id ="char" src="character.png">
+	<div class="scroll">
+	<div class="choices-container">
+		 <img id="humanrock" class="choice" data-choice="rock" src="./gameimages/4.png">
+	<img id="humanpaper" class="choice" data-choice="paper" src="./gameimages/2.png">
+	<img id="humanscissors" class="choice" data-choice="scissors" src="./gameimages/1.png">
+	</div>
+   
+	</div>
+	</div>
+	
+
 <script src = "./rps.js"></script>
 </body>
 </html>
