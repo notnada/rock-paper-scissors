@@ -61,21 +61,19 @@ function getHumanChoice(onChoice) {
 	let computerScore = document.querySelector("#computerscore")
 
 	getHumanChoice((choice) => {
+		if (humanScore.textContent == 5 || computerScore.textContent == 5){
+				humanScore.innerText= 0;
+ 				computerScore.innerText = 0;
+		}
+		
    		humanChoice = choice;
    		playRound(humanChoice,computerChoice)
-
    		
-if (humanScore.textContent== 5) {
+   		if (humanScore.textContent== 5)
+   		  {box.textContent = "human wins!"}
+ 			else if (computerScore.textContent == 5)
+ 				{box.textContent = "computer wins!"}
 
- 	box.textContent = "human wins!"
- 	humanScore.innerText= 0;
- 	computerScore.innerText = 0;
-} else if (computerScore.textContent == 5) {
-   box.textContent = "computer wins!"
-  humanScore.innerText= 0;
- 	computerScore.innerText = 0;
-}
-	
 			});
 
 	
